@@ -1,5 +1,6 @@
 package com.yildiz.entity;
 
+import com.yildiz.dto.UserDto;
 import com.yildiz.enums.UserRole;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -65,5 +66,37 @@ public class User implements UserDetails {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public UserDto getUserDto(){
+        UserDto dto = new UserDto();
+        dto.setId(id);
+        dto.setEmail(email);
+        dto.setUserRole(userRole);
+        return dto;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public UserRole getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
     }
 }

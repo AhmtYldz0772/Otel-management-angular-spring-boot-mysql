@@ -1,6 +1,11 @@
 package com.yildiz.services.auth;
 
-public interface AuthService {
+import com.yildiz.dto.SingupRequeust;
+import com.yildiz.dto.UserDto;
 
+
+
+public interface AuthService {
+    UserDto createUser(SingupRequeust singupRequeust);
 
 }
